@@ -36,7 +36,7 @@ export default function Contact() {
       return;
     }
 
-    const mailtoLink = `mailto:arvindkumar8960905167@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:ganga228151@gmail.com?subject=${encodeURIComponent(
       form.subject
     )}&body=${encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`

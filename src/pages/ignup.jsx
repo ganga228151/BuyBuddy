@@ -26,9 +26,9 @@ export const Signup = () => {
 
     try {
       const response = await axios.post(
-        // "http://localhost:5000/api/user/register",
-        "https://buyboddy-backend.onrender.com/api/user/register",
+         "http://localhost:5000/api/user/register",
         // "https://buyboddy-backend.onrender.com/api/user/register",
+        
         userData
       );
       const { token } = response.data;

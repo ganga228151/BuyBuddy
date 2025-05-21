@@ -27,7 +27,9 @@ export const SideBar = () => {
   const loadUser = async () => {
     let res;
     try {
-      res = await axios.get(`https://buyboddy-backend.onrender.com/api/user`, {
+      res = await axios.get(`http://localhost:5000/api/user`, {
+
+      // res = await axios.get(`https://buyboddy-backend.onrender.com/api/user`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

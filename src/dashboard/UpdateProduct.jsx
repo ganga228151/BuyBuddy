@@ -14,8 +14,8 @@ export const UpdateProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`https://buyboddy-backend.onrender.com/api/product/${id}`);
-        // const response = await axios.get(`http://localhost:5000/api/product/${id}`);
+        // const response = await axios.get(`https://buyboddy-backend.onrender.com/api/product/${id}`);
+        const response = await axios.get(`http://localhost:5000/api/product/${id}`);
        
         setProductData(response.data.response);
         setImagePreview(response.data.response.image.url);
@@ -51,8 +51,8 @@ export const UpdateProduct = () => {
     e.preventDefault();
     const token = getAuthToken();
     try {
-      const res=await axios.put(`https://buyboddy-backend.onrender.com/api/product/${id}`, productData, {
-      // const res=await axios.put(`http://localhost:5000/api/product/${id}`, productData, {
+      // const res=await axios.put(`https://buyboddy-backend.onrender.com/api/product/${id}`, productData, {
+       const res=await axios.put(`http://localhost:5000/api/product/${id}`, productData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -19,8 +19,8 @@ export const DashboardHome = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "https://buyboddy-backend.onrender.com/api/product/all"
-          // "http://localhost:5000/api/product/all"
+          // "https://buyboddy-backend.onrender.com/api/product/all"
+           "http://localhost:5000/api/product/all"
         );
         setProducts(response.data?.response);
         setLoading(false);
@@ -35,8 +35,8 @@ export const DashboardHome = () => {
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(
-        `https://buyboddy-backend.onrender.com/api/product/${id}`,
-        // `http://localhost:5000/api/product/${id}`,
+        // `https://buyboddy-backend.onrender.com/api/product/${id}`,
+        `http://localhost:5000/api/product/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

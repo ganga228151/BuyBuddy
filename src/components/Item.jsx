@@ -25,8 +25,8 @@ export const Item = () => {
     try {
       const token = getAuthToken();
       const response = await axios.post(
-        "https://buyboddy-backend.onrender.com/api/user/place-order",
-        // "http://localhost:5000/api/user/place-order",
+        // "https://buyboddy-backend.onrender.com/api/user/place-order",
+         "http://localhost:5000/api/user/place-order",
         {
           productId: selectedProduct._id,
           productName: selectedProduct.name,
@@ -55,8 +55,8 @@ export const Item = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `https://buyboddy-backend.onrender.com/api/product/${id}`
-          // `http://localhost:5000/api/product/${id}`
+          // `https://buyboddy-backend.onrender.com/api/product/${id}`
+          `http://localhost:5000/api/product/${id}`
         );
         setProduct(response.data.response);
       } catch (error) {
@@ -73,8 +73,8 @@ export const Item = () => {
     try {
       const token = localStorage.getItem("authToken");
       await axios.post(
-        `https://buyboddy-backend.onrender.com/api/user/add-to-cart/${id}`,
-        // `http://localhost:5000/api/user/add-to-cart/${id}`,
+        // `https://buyboddy-backend.onrender.com/api/user/add-to-cart/${id}`,
+         `http://localhost:5000/api/user/add-to-cart/${id}`,
       
         {},
         {
