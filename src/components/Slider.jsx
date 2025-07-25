@@ -45,7 +45,8 @@ export const Slider = ({ products }) => {
     try {
       const token = getAuthToken();
       const response = await axios.post(
-        "http://localhost:5000/api/user/place-order",
+       "https://backend-4s44.onrender.com/api/user/place-order",
+        // "http://localhost:5000/api/user/place-order",
         // "https://buyboddy-backend.onrender.com/api/user/place-order",
         {
           productId: selectedProduct._id,

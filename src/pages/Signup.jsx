@@ -26,7 +26,8 @@ export const Signup = () => {
 
     try {
       const response = await axios.post(
-         "http://localhost:5000/api/user/register",
+       " https://backend-4s44.onrender.com/api/user/place-order",
+        //  "http://localhost:5000/api/user/register",
         // "https://buyboddy-backend.onrender.com/api/user/register",
         
         userData

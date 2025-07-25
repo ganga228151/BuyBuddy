@@ -56,8 +56,9 @@ export const UploadProduct = () => {
       const token = getAuthToken();
 
       const response = await axios.post(
-        // "https://buyboddy-backend.onrender.com/api/product/add",
-        "http://localhost:5000/api/product/add",
+        "https://backend-4s44.onrender.com/api/product/add",
+        // "http://localhost:5000/api/product/add",
+
         data,
         {
           headers: {

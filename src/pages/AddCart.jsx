@@ -17,7 +17,7 @@ export const AddCart = () => {
       const token = getAuthToken();
       const { data } = await axios.get(
         // "https://buyboddy-backend.onrender.com/api/user/cart-products",
-         "http://localhost:5000/api/user/cart-products",
+         "https://backend-4s44.onrender.com/api/user/cart-products",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -43,7 +43,8 @@ export const AddCart = () => {
       const token = getAuthToken();
       await axios.delete(
         // `https://buyboddy-backend.onrender.com/api/user/delete-from-cart/${id}`,
-         `http://localhost:5000/api/user/user/delete-from-cart/${id}`,
+        //  `http://localhost:5000/api/user/user/delete-from-cart/${id}`,
+        "https://backend-4s44.onrender.com/api/user/place-order",
         {
           headers: {
             Authorization: `Bearer ${token}`,

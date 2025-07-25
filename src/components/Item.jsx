@@ -18,7 +18,7 @@ export const Item = () => {
   const [message, setMessage] = useState("");
   const [customerName, setCustomerName] = useState("");
   const [customerAddress, setCustomerAddress] = useState("");
-    const {setProductDetails}=useContext(ProductConetxt);
+  const { setProductDetails } = useContext(ProductConetxt);
 
   // Submit order to backend
   const submitOrder = async () => {
@@ -26,7 +26,8 @@ export const Item = () => {
       const token = getAuthToken();
       const response = await axios.post(
         // "https://buyboddy-backend.onrender.com/api/user/place-order",
-         "http://localhost:5000/api/user/place-order",
+        //"http://localhost:5000/api/user/place-order",
+       "https://backend-4s44.onrender.com/api/user/place-order",
         {
           productId: selectedProduct._id,
           productName: selectedProduct.name,
@@ -56,7 +57,8 @@ export const Item = () => {
       try {
         const response = await axios.get(
           // `https://buyboddy-backend.onrender.com/api/product/${id}`
-          `http://localhost:5000/api/product/${id}`
+          // `http://localhost:5000/api/product/${id}`
+         `https://backend-4s44.onrender.com/api/product/${id}`,
         );
         setProduct(response.data.response);
       } catch (error) {
@@ -72,10 +74,12 @@ export const Item = () => {
   const handleOrderedProducts = async (id) => {
     try {
       const token = localStorage.getItem("authToken");
-      await axios.post(
+      const res=await axios.post(
         // `https://buyboddy-backend.onrender.com/api/user/add-to-cart/${id}`,
-         `http://localhost:5000/api/user/add-to-cart/${id}`,
-      
+        //  `http://localhost:5000/api/user/add-to-cart/${id}`,
+
+        `https://backend-4s44.onrender.com/api/user/add-to-cart/${id}`,
+
         {},
         {
           headers: {
@@ -83,9 +87,11 @@ export const Item = () => {
           },
         }
       );
+      console.log(res)
       navigate("/addcart");
     } catch (error) {
-      alert(error.response?.data?.message + " Failed to add to cart");
+      alert(error + " Failed to add to cart");
+      console.log(error)
     }
   };
 
@@ -93,8 +99,8 @@ export const Item = () => {
   if (!product) return <p className="text-center">Product not found</p>;
 
   const handleBuyNow = (product) => {
-  setProductDetails(product);
-  navigate("/payment")
+    setProductDetails(product);
+    navigate("/payment")
   };
 
   return (
@@ -194,7 +200,7 @@ export const Item = () => {
           </p>
         )}
       </motion.section>
-      <BargainBot originalPrice={product.price}/>
+      <BargainBot originalPrice={product.price} />
     </div>
   );
 };

@@ -12,15 +12,23 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-         "http://localhost:5000/api/user/login",
+        //  "http://localhost:5000/api/user/login",
         // "https://buyboddy-backend.onrender.com/api/user/login",
+        "https://backend-4s44.onrender.com/api/user/login",
         { email, password }
       );
-      const { token } = response.data;
-      localStorage.setItem("authToken", token);
-      alert("Login successful! you are rediected to the home page");
-      setMessage("Login successful!");
-      navigate("/");
+      console.log(response.data.token);
+      if (response.data.message === "user not found invalid email or password") {
+        setMessage("Invalid email or password");
+        return;
+      }
+   
+       
+        localStorage.setItem("authToken",  response.data.token);
+        alert("Login successful! you are rediected to the home page");
+        setMessage("Login successful!");
+        navigate("/");
+   
     } catch (error) {
       setMessage(error.response?.data?.message || "Login failed");
     }
@@ -36,9 +44,8 @@ const Login = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className={`text-center text-white font-semibold ${
-              message === "Login successful!" ? "text-green-400" : "text-red-400"
-            }`}
+            className={`text-center text-white font-semibold ${message === "Login successful!" ? "text-green-400" : "text-red-400"
+              }`}
           >
             {message}
           </motion.p>
