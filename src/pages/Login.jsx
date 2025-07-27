@@ -78,10 +78,10 @@ const Login = () => {
         <div className="text-center">
           <span className="text-white">Don't have an account? </span>
           <Link
-            to="/sign-up"
+            to="/Signup"
             className="text-yellow-300 hover:text-yellow-400 hover:underline"
           >
-            Sign Up
+            Signup
           </Link>
         </div>
       </div>
