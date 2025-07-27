@@ -10,7 +10,7 @@ import { AddCart } from "./pages/AddCart";
 import { DashboardHome } from "./dashboard/DashboardHome";
 import { UploadProduct } from "./dashboard/UploadProduct";
 import { UpdateProduct } from "./dashboard/UpdateProduct";
-import { Signup } from "./pages/ignup";
+import { Signup } from "./pages/Signup";
 import Login from "./pages/Login";
 import { Footer } from "./pages/Footer";
 import { AboutUs } from "./pages/AboutUs";
